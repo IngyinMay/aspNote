@@ -4,17 +4,21 @@ Application Core
 
 Application Core
 
-Entities (business model classes that are persisted)
+- Entities (business model classes that are persisted)
 
-Aggregates (groups of entities)
+- Aggregates (groups of entities)
 
-Interfaces
+- Interfaces
 
-Domain Services
+- Domain Services
 
-Specifications
+- Specifications
 
-Custom Exceptions and Guard Clauses
+- Custom Exceptions and Guard Clauses
 
-Domain Events and Handlers
+- Domain Events and Handlers
 
+
+
+
+Infrastructure
