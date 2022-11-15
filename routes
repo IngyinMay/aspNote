@@ -4,13 +4,17 @@ Routing
 
 
 Conventional Routing
-
+- Conventional routing is used with controllers and views. The default route:
 - in program.cs
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
     
-- /Products/Details/5 model binds the value of id = 5 to set the id parameter to 5. See Model Binding for more details.
+
+- Produces the route values { controller = Home, action = Index }.
+- The first path segment, {controller=Home}, maps to the controller name.
+- The second segment, {action=Index}, maps to the action name.
+- The third segment, {id?} is used for an optional id. The ? in {id?} makes it optional. id is used to map to a model entity.
 
 - {controller=Home} defines Home as the default controller.
 
@@ -21,6 +25,3 @@ app.MapControllerRoute(
 - Default and optional route parameters don't need to be present in the URL path for a match. See Route Template Reference for a detailed description of route template syntax.
 - Matches the URL path /.
 
-- Produces the route values { controller = Home, action = Index }.
-- 
-- 
