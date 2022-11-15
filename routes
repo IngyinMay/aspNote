@@ -1,0 +1,23 @@
+Routing
+- Conventional routing typically used with controllers and views.
+- Attribute routing used with REST APIs. 
+
+
+Conventional Routing
+- in program.cs
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+    
+- /Products/Details/5 model binds the value of id = 5 to set the id parameter to 5. See Model Binding for more details.
+
+- {controller=Home} defines Home as the default controller.
+
+- {action=Index} defines Index as the default action.
+
+- The ? character in {id?} defines id as optional.
+
+- Default and optional route parameters don't need to be present in the URL path for a match. See Route Template Reference for a detailed description of route template syntax.
+- Matches the URL path /.
+
+- Produces the route values { controller = Home, action = Index }.
