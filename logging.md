@@ -33,7 +33,8 @@ This will install both the logging extensions of log4net in ASP.NET Core and the
 
 <h4>Step 2: Add the log4net.config file</h4>
 Create log4net.config file in project root folder
-```
+
+ ```html:
 <log4net>
   <root>
     <level value="WARN" />
