@@ -36,18 +36,24 @@ Create log4net.config file in project root folder
 
  ```html:
 <log4net>
-  <root>
-    <level value="WARN" />
-    <appender-ref ref="RollingFile" />
-  </root>
-  <appender name="RollingFile" type="log4net.Appender.RollingFileAppender">
-    <appendToFile value="true" />
-    <file value="D:\Projects\LoggingDemo\logs\logfile" />
-    <rollingStyle value="Date" />
-    <datePattern value="yyyyMMdd-HHmm" />
-    <layout type="log4net.Layout.PatternLayout">
-      <conversionPattern value="%date %-5level %logger.%method [%line] - MESSAGE: %message%newline" />
-    </layout>
-  </appender>
+	<root>
+		<level value="WARN" />
+		<appender-ref ref="RollingFile" />
+	</root>
+	<appender name="RollingFile" type="log4net.Appender.RollingFileAppender">
+		<appendToFile value="true" />
+		<file type="log4net.Util.PatternString" value="%property{LoggerFilePath}\logs\BulletinApp_%utcdate{yyyy-MM-dd}.log" />
+		<layout type="log4net.Layout.PatternLayout">
+			<conversionPattern value="%date %-5level %logger.%method [%line] - MESSAGE: %message%newline" />
+		</layout>
+	</appender>
 </log4net>
 ```
+
+<h4>Step 3: Modify the Program.cs file</h4>
+ 
+``builder.Logging.ClearProviders(); ``
+
+``builder.Logging.AddLog4Net("log4net.config");``
+- If you want to set custom log file path instead of bin/debug, declare your custom log file path and use that in log4net.config file
+``GlobalContext.Properties["LoggerFilePath"] = Environment.CurrentDirectory.Replace("\\bin\\Debug", "");``
