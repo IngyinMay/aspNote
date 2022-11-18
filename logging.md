@@ -59,7 +59,9 @@ Create log4net.config file in project root folder
 ``GlobalContext.Properties["LoggerFilePath"] = Environment.CurrentDirectory.Replace("\\bin\\Debug", "");``
 
 <h4>Step 4: Test if the log files created</h4>
-Add the following lines in the IndexModel() of the Index.cshtml.cs page:
+Add the following lines in the IndexModel() of the Index.cshtml.cs page: 
+or 
+in HomeController.cs
 
 ```cs
 _logger.LogDebug("Hey, this is a DEBUG message.");
