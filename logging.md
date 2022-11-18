@@ -57,3 +57,20 @@ Create log4net.config file in project root folder
 ``builder.Logging.AddLog4Net("log4net.config");``
 - If you want to set custom log file path instead of bin/debug, declare your custom log file path and use that in log4net.config file
 ``GlobalContext.Properties["LoggerFilePath"] = Environment.CurrentDirectory.Replace("\\bin\\Debug", "");``
+
+<h4>Step 4: Test if the log files created</h4>
+Add the following lines in the IndexModel() of the Index.cshtml.cs page:
+
+```cs
+_logger.LogDebug("Hey, this is a DEBUG message.");
+_logger.LogInformation("Hey, this is an INFO message.");
+_logger.LogWarning("Hey, this is a WARNING message.");
+_logger.LogError("Hey, this is an ERROR message.");
+```
+- Run the code and wait until the web app is ready. Check the log folder, and you should see a new log file created. When you open the file, it shows the following content:
+```cs
+2022-11-18 09:06:35,007 WARN  web.Pages.IndexModel..ctor [15] - MESSAGE: Hey, this is a WARNING message.
+2022-11-18 09:06:35,042 ERROR web.Pages.IndexModel..ctor [16] - MESSAGE: Hey, this is an ERROR message.
+2022-11-18 09:06:39,923 WARN  web.Pages.IndexModel..ctor [15] - MESSAGE: Hey, this is a WARNING message.
+2022-11-18 09:06:39,923 ERROR web.Pages.IndexModel..ctor [16] - MESSAGE: Hey, this is an ERROR message.
+```
