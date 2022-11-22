@@ -1,4 +1,4 @@
-Web 
+Web  -> Application -> Core -> Infracture
 
 <h4>Web depends on </h4>
 
