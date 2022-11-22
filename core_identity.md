@@ -16,3 +16,13 @@ ref : https://www.tektutorialshub.com/asp-net-core/asp-net-core-identity-tutoria
 <h2>Sign In Manager</h2>
 -  handles the user sign in from the application.
 -  
+
+<h2> Installing Identity API</h2>
+
+```Install-Package Microsoft.AspNetCore.Identity```
+
+```Install-Package Microsoft.AspNetCore.Identity.EntityFrameworkCore```
+
+```Install-package Microsoft.EntityFrameworkCore.SqlServer```
+
+```Install-Package Microsoft.EntityFrameworkCore.Tools```
